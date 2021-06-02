@@ -18,7 +18,10 @@ Contact Me: fatema131khaled@gmail.com
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     -o-box-sizing: border-box;
-    font-family: 'Lato', sans-serif
+}
+
+body {
+    font-family: 'Lato'
 }
 
 h1,
@@ -39,18 +42,34 @@ img {
     max-width: 100%
 }
 
+/* Start Root */
+
 :root {
     --main: #0dad8d;
     --bg: #222;
     --head: #555;
-    --p: #777
+    --p: #777;
+    --white: #fff;
+}
+
+header,
+.text1 a,
+.container8 a,
+.icons1 i {
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s
 }
 
 .nav-link.nav-active {
     color: var(--main) !important
 }
 
-/* Header */
+/* End Root */
+
+/* Start Header */
 
 header {
     line-height: 25px;
@@ -59,11 +78,6 @@ header {
     width: 100%;
     padding-bottom: 20px;
     z-index: 999999999;
-    -webkit-transition: .5s;
-    -moz-transition: .5s;
-    -ms-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s
 }
 
 header h1 {
@@ -90,7 +104,7 @@ header h1 {
 
 header h1,
 .container1 ul li a {
-    color: white
+    color: var(--white)
 }
 
 .change {
@@ -119,13 +133,13 @@ header h1,
     width: 100%
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     .container1 {
-        width: 96%
+        width: 90%
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
     .menu {
         display: block
     }
@@ -135,17 +149,23 @@ header h1,
     }
 }
 
-/* Home */
+/* End Header */
+
+/* Start Home */
 
 #home {
     background: url(../img/header-bg.jpg) no-repeat bottom right/cover;
-    height: 670px
+    height: 100vh;
+    width: 100%;
+    display: table
 }
 
 .text1 {
-    color: white;
+    padding: 5px;
+    display: table-cell;
+    vertical-align: middle;
+    color: var(--white);
     text-align: center;
-    padding-top: 250px
 }
 
 .text1 p {
@@ -167,11 +187,6 @@ header h1,
     padding: 14px 18px;
     width: fit-content;
     border-radius: 4px;
-    -webkit-transition: .5s;
-    -moz-transition: .5s;
-    -ms-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s
 }
 
 .text1 a:hover {
@@ -179,65 +194,15 @@ header h1,
     background: rgba(255, 255, 255, 0.8)
 }
 
-@media (max-width: 750px) {
-    .text1 p {
-        font-size: 54px
-    }
-
-    .text1 span {
-        font-size: 20px
-    }
-}
-
-@media (max-width: 650px) {
-    .text1 p {
-        font-size: 50px
-    }
-
-    .text1 span {
-        font-size: 18px
-    }
-
-    .text1 a {
-        padding: 10px 14px
-    }
-}
-
-@media (max-width: 550px) {
-    .text1 p {
-        padding: 0 10px;
-        font-size: 44px
-    }
-
-    .text1 span {
-        padding: 0 10px;
-        font-size: 16px
-    }
-
-    .text1 a {
-        font-size: 14px
-    }
-}
-
-@media (max-width: 500px) {
+@media (max-width: 480px) {
     .text1 p {
         font-size: 40px
     }
 }
 
-@media (max-width: 450px) {
-    .text1 p {
-        font-size: 36px
-    }
-}
+/* End Home */
 
-@media (max-width: 400px) {
-    .text1 p {
-        font-size: 32px
-    }
-}
-
-/* Services */
+/* Start Services */
 
 #services,
 #portfolio,
@@ -269,15 +234,15 @@ header h1,
     padding-right: 10px
 }
 
-.container2 {
-    margin-top: 100px;
+.container2,
+.container6 {
+    margin: 20px auto;
     width: 80%;
     display: flex;
-    margin: auto
 }
 
 .item1 {
-    padding: 0 15px;
+    padding: 10px;
     display: flex;
     flex-direction: column
 }
@@ -298,23 +263,25 @@ header h1,
     color: var(--p)
 }
 
-@media (max-width: 1050px) {
-    .container2 {
+@media (max-width: 1200px) {
+
+    .container2,
+    .container6 {
         width: 100%
     }
 }
 
-@media (max-width: 800px) {
-    .container2 {
-        flex-direction: column
-    }
+@media (max-width: 1024px) {
 
-    .item1 {
-        margin-bottom: 25px
+    .container2,
+    .container6 {
+        flex-direction: column
     }
 }
 
-/* Portfolio */
+/* End Services */
+
+/* Start Portfolio */
 
 #portfolio,
 #contact {
@@ -329,7 +296,7 @@ header h1,
 
 .container3 .active {
     background: var(--main);
-    color: white
+    color: var(--white)
 }
 
 #filters {
@@ -353,12 +320,13 @@ header h1,
 
 #portfoliolist {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap
 }
 
 #portfoliolist .portfolio {
     width: 23%;
-    margin: 1%;
+    margin: 5px;
     display: none;
     float: left;
     overflow: hidden
@@ -388,37 +356,27 @@ header h1,
     height: 0
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
     .container3 {
         width: 100%
     }
 }
 
-@media (max-width: 850px) {
-    .container3 {
-        width: 98%
-    }
-
-    #portfoliolist {
-        flex-direction: column
-    }
-
+@media (max-width: 1024px) {
     #portfoliolist .portfolio {
-        width: 98%;
-        display: block;
-        margin-right: auto;
-        margin-left: auto;
-        margin-bottom: 25px
+        width: 47%
     }
 }
 
-@media (max-width: 500px) {
-    #filters li {
-        margin-top: 5px
+@media (max-width: 768px) {
+    #portfoliolist .portfolio {
+        width: 100%
     }
 }
 
-/* About */
+/* End Portfolio */
+
+/* Start About */
 
 .container4 {
     display: flex;
@@ -428,19 +386,19 @@ header h1,
     margin-top: 75px
 }
 
-.left1 {
+.left1,
+.right1 {
+    padding: 10px;
+    align-self: center;
     flex: 1
 }
 
 .right1 {
-    padding: 0 20px;
-    flex: 1;
-    align-self: center;
-    text-align: start ! important
+    text-align: start
 }
 
-.text2 {
-    margin-bottom: 30px
+.text2:nth-child(2) {
+    margin: 20px 0
 }
 
 .text2 strong {
@@ -448,46 +406,32 @@ header h1,
 }
 
 .text2 p {
-    margin-top: 10px;
+    margin-top: 6px;
     color: var(--p)
 }
 
-@media (max-width: 1275px) {
+@media (max-width: 1200px) {
     .container4 {
-        width: 100%
-    }
-
-    .right1 {
-        align-self: center
+        width: 98%
     }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1024px) {
     .container4 {
-        width: 98%;
         flex-direction: column
     }
 
     .right1 {
-        text-align: center ! important;
-        margin-top: 30px
-    }
-
-    .text2:nth-child(3) {
-        margin-bottom: 0
+        text-align: center
     }
 }
 
-@media (max-width: 500px) {
-    .text2 p {
-        font-size: 14px
-    }
-}
+/* End About */
 
-/* Timer */
+/* Start Timer */
 
 .countto {
-    color: white;
+    color: var(--white);
     background: var(--main)
 }
 
@@ -509,13 +453,13 @@ header h1,
     color: rgba(255, 255, 255, 0.8)
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1200px) {
     .container5 {
-        width: 96%
+        width: 90%
     }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 768px) {
     .container5 {
         flex-direction: column
     }
@@ -529,21 +473,18 @@ header h1,
     }
 }
 
-/* Team */
+/* End Timer */
+
+/* Start Team */
 
 .container6 {
     justify-content: space-between;
-    display: flex;
-    width: 80%;
-    margin: auto
 }
 
 .item2 {
-    margin-top: 40px;
-    padding: 0 15px;
+    padding: 10px;
     display: block;
-    margin-left: auto;
-    margin-right: auto
+    margin: auto
 }
 
 .item2 img {
@@ -567,19 +508,9 @@ header h1,
     line-height: 22px
 }
 
-@media (max-width: 1050px) {
-    .container6 {
-        width: 100%
-    }
-}
+/* End Team */
 
-@media (max-width: 800px) {
-    .container6 {
-        flex-direction: column
-    }
-}
-
-/* Contact */
+/* Start Contact */
 
 .container7 {
     display: flex;
@@ -650,27 +581,22 @@ textarea:focus {
     padding: 10px 14px;
     width: fit-content;
     border-radius: 4px;
-    -webkit-transition: .5s;
-    -moz-transition: .5s;
-    -ms-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s
 }
 
 .container8 a:hover {
     background: var(--main);
-    color: white
+    color: var(--white)
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1024px) {
 
     .container7,
     .container8 {
-        width: 98%
+        width: 90%
     }
 }
 
-@media (max-width: 525px) {
+@media (max-width: 768px) {
 
     .container7,
     .inputs {
@@ -678,7 +604,8 @@ textarea:focus {
     }
 
     .icons {
-        margin-bottom: 15px
+        padding: 0;
+        padding-bottom: 10px;
     }
 
     .inputs input:nth-of-type(1) {
@@ -692,23 +619,20 @@ textarea:focus {
     }
 }
 
-/* Footer */
+/* End Contact */
+
+/* Start Footer */
 
 .icons1 {
     padding: 40px 0;
     text-align: center;
     background: var(--main);
-    color: white
+    color: var(--white)
 }
 
 .icons1 i {
     font-size: 26px;
     margin: 0 12px;
-    -webkit-transition: .5s;
-    -moz-transition: .5s;
-    -ms-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s;
     cursor: pointer
 }
 
@@ -719,7 +643,7 @@ textarea:focus {
 footer p {
     padding: 5px 0;
     text-align: center;
-    color: white;
+    color: var(--white);
     word-spacing: 10px;
     background: var(--bg)
 }
@@ -729,3 +653,5 @@ footer p {
         margin-bottom: 10px
     }
 }
+
+/* End Footer */
